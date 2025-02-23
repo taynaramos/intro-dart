@@ -1,38 +1,66 @@
 // import 'package:introducao_dart/aula2/produto.dart';
 // import 'package:introducao_dart/logic.dart' as introducao_dart;
 
-import 'package:introducao_dart/aula2/cliente.dart';
-import 'package:introducao_dart/aula2/livro.dart';
-import 'package:introducao_dart/aula2/pedido.dart';
-import 'package:introducao_dart/aula2/produto.dart';
-import 'package:introducao_dart/aula2/sistema_loja.dart';
+// import 'package:introducao_dart/aula2/cliente.dart';
+// import 'package:introducao_dart/aula2/livro.dart';
+// import 'package:introducao_dart/aula2/pedido.dart';
+// import 'package:introducao_dart/aula2/produto.dart';
+// import 'package:introducao_dart/aula2/sistema_loja.dart';
 
-void main(List<String> arguments) {
-  SistemaLoja sistema = SistemaLoja(pedidos: []);
+Future<String> fetchData() {
+  return Future.error({"mensagem": "erro na requisição"});
+  // return Future.delayed(Duration(seconds: 2), () {
+  //   return "Dados carregados";
+  // });
+}
 
-  Cliente cliente = Cliente(nome: 'Fulano', email: 'fulano@email.com');
+void main(List<String> arguments) async {
+  print("Inicializando a requisição");
 
-  Produto produto = Produto(id: 1, nome: 'caixa', preco: 20);
-  Produto produto2 = Produto(id: 2, nome: 'papel', preco: 10);
+  try {
+    String data = await fetchData();
+    print(data);
+  } catch (e) {
+    print("error: $e");
+  }
 
-  List<Produto> carrinho = [];
+  // fetchData()
+  //     .then((valorRetornado) {
+  //       print(valorRetornado);
+  //     })
+  //     .catchError((error) {
+  //       print("error: $error");
+  //     });
 
-  Livro livro = Livro(
-    autor: 'Jose',
-    idParametro: 2,
-    nomeParametro: 'galaxia',
-    precoParametro: 19.90,
-  );
+  print("final da requisição");
 
-  carrinho.add(produto);
-  carrinho.add(produto2);
-  carrinho.add(livro);
+  // // ****** TRABALHANDO COM POO ******
 
-  Pedido pedido = Pedido(cliente: cliente, items: carrinho);
+  // SistemaLoja sistema = SistemaLoja(pedidos: []);
 
-  sistema.adicionarPedido(pedido);
+  // Cliente cliente = Cliente(nome: 'Fulano', email: 'fulano@email.com');
 
-  sistema.listaPedidos();
+  // Produto produto = Produto(id: 1, nome: 'caixa', preco: 20);
+  // Produto produto2 = Produto(id: 2, nome: 'papel', preco: 10);
+
+  // List<Produto> carrinho = [];
+
+  // Livro livro = Livro(
+  //   autor: 'Jose',
+  //   idParametro: 2,
+  //   nomeParametro: 'galaxia',
+  //   precoParametro: 19.90,
+  // );
+
+  // carrinho.add(produto);
+  // carrinho.add(produto2);
+  // carrinho.add(livro);
+
+  // Pedido pedido = Pedido(cliente: cliente, items: carrinho);
+
+  // sistema.adicionarPedido(pedido);
+
+  // sistema.listaPedidos();
 
   // Produto p = ProdutoEstudo(nome: "caixa", id: 1, corParametro: "preta");
 
