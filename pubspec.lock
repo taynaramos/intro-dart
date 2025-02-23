@@ -189,8 +189,10 @@ packages:
     dependency: "direct main"
     description:
       path: "packages/my_simple_package"
-      relative: true
-    source: path
+      ref: main
+      resolved-ref: "2f92fef510cf1a38a2e6297cc3f62b0436330432"
+      url: "https://github.com/taynaramos/intro-dart"
+    source: git
     version: "1.0.0"
   node_preamble:
     dependency: transitive
