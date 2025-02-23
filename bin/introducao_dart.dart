@@ -7,32 +7,24 @@
 // import 'package:introducao_dart/aula2/produto.dart';
 // import 'package:introducao_dart/aula2/sistema_loja.dart';
 
-Future<String> fetchData() {
-  return Future.error({"mensagem": "erro na requisição"});
-  // return Future.delayed(Duration(seconds: 2), () {
-  //   return "Dados carregados";
-  // });
+// stream: traz dados sob demanda, nesse caso, usar * no async
+Stream<int> generateNumbers() async* {
+  for (var i = 0; i < 5; i++) {
+    await Future.delayed(Duration(seconds: 1));
+    yield i;
+  }
 }
 
 void main(List<String> arguments) async {
-  print("Inicializando a requisição");
 
-  try {
-    String data = await fetchData();
-    print(data);
-  } catch (e) {
-    print("error: $e");
-  }
+print("Inicializando geraçao de numeros...");
 
-  // fetchData()
-  //     .then((valorRetornado) {
-  //       print(valorRetornado);
-  //     })
-  //     .catchError((error) {
-  //       print("error: $error");
-  //     });
+await for (int number in generateNumbers()) {
+  print("numero gerado: $number");
+}
 
-  print("final da requisição");
+print("Final da requisiçao");
+
 
   // // ****** TRABALHANDO COM POO ******
 
