@@ -3,13 +3,10 @@
 
 import 'package:my_simple_package/my_simple_package.dart';
 
-void main(List<String> arguments) {
-//  var now = DateTime.now();
-//  var formatter = DateFormat('dd/MM/yyyy');
-//  String dateFormat = formatter.format(now);
+void main(List<String> arguments) async{
 
-//  print("Data: $now");
-//  print("Data formatada: $dateFormat");
-var mensagem = saudacoes("fulando");
-print(mensagem);
+print('inicializando a aplicaçao');
+await fetchData();
+
+
 }

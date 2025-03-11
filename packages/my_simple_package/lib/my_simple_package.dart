@@ -3,6 +3,6 @@
 /// More dartdocs go here.
 library;
 
-export 'src/my_simple_package_base.dart';
+export 'src/fetch_data.dart';
 
 // TODO: Export any libraries intended for clients of this package.
