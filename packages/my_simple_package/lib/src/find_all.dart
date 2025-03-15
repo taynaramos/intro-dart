@@ -4,9 +4,9 @@ import 'package:http/http.dart' as http;
 
 import 'urls.dart';
 
-Future<void> findAll() async {
+Future<void> findAll(http.BaseClient client) async {
   print(urlBase);
-  final response = await http.get(Uri.parse(urlBase));
+  final response = await client.get(Uri.parse(urlBase));
 
   if(response.statusCode == 200) {
     var data = jsonDecode(response.body);

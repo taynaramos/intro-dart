@@ -4,9 +4,9 @@ import 'package:http/http.dart' as http;
 
 import 'urls.dart';
 
-Future<void> deleteOne(int id) async {
+Future<void> deleteOne(http.BaseClient client, int id) async {
   print(urlBase);
-  final response = await http.delete(Uri.parse('$urlBase/$id'));
+  final response = await client.delete(Uri.parse('$urlBase/$id'));
 
   if(response.statusCode == 200) {
     var data = jsonDecode(response.body);

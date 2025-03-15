@@ -5,14 +5,13 @@ import 'package:http/http.dart' as http;
 import 'models/create_post_model.dart';
 import 'urls.dart';
 
-Future<void> create(CreatePostModel data) async {
+Future<void> create(http.BaseClient client, CreatePostModel data) async {
   var body = {"id": data.id, "body": data.body, "title": data.title};
 
   var dataEncode = jsonEncode(body);
 
-  final response = await http.post(
+  final response = await client.post(
     Uri.parse(urlBase),
-    headers: {'accept': 'application/json', 'Content-Type': 'application/json'},
     body: dataEncode,
   );
 
