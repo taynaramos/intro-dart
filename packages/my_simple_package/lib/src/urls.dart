@@ -1,0 +1,1 @@
+const String urlBase = 'http://localhost:3000/posts';

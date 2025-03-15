@@ -10,10 +10,11 @@ environment:
 dependencies:
   # path: ^1.8.0
   intl: ^0.20.2
-  my_simple_package: 
+  my_simple_package:
+    path: ./packages/my_simple_package
     # git:
     #   url: https://github.com/taynaramos/intro-dart
-    path: ./packages/my_simple_package
+      # path: ./packages/my_simple_package
       # ref: main
 
 dev_dependencies:

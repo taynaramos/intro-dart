@@ -3,10 +3,8 @@
 
 import 'package:my_simple_package/my_simple_package.dart';
 
-void main(List<String> arguments) async{
+void main(List<String> arguments) async {
 
-print('inicializando a aplicaçao');
-await fetchData();
-
-
+  print('inicializando a aplicaçao');
+  await findAll();
 }
